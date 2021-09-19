@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html theme="dark-mode" lang="en" style="filter: invert(1) hue-rotate(180deg)">
+  <head>
+    <%- include("../components/head",{title:"Articles List"}); %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <% articles.forEach((article,index) => { %>
+          <div class="card mb-3 mt-3">
+            <div class="card-body">
+              <h3 class="card-title"><%= article.title %></h3>
+              <p class="card-text"><%= article.text %></p>
+              <a href="/articles/<%= index %>" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+          <% });%>
+        </div>
+      </div>
+    </div>
+
+    <%- include("../components/scripts"); %>
+  </body>
+</html>
